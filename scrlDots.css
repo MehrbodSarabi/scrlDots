@@ -16,6 +16,20 @@
     /* background-color: red; */
     padding: 2.5%;
 }
+.oddCircle{
+    flex: 0 1 100%;
+    padding-top: 100%;
+    /* padding: 15%; */
+    background-color: red;
+    border-radius: 50%;
+}
+.evenCircle{
+    flex: 0 1 100%;
+    padding-top: 100%;
+    /* padding: 15%; */
+    background-color: blue;
+    border-radius: 50%;
+}
 .circle{
     flex: 0 1 100%;
     padding-top: 100%;
