@@ -6,8 +6,10 @@ function color_generator() {
     var z = Math.floor(Math.random() * 256);
     var bgcolor = "rgb("+x+","+y+","+z+")";
     var revertbgcolor = "rgb("+z+","+y+","+x+")";
+    var anderebgcolor = "rgb("+y+","+y+","+y+")";
     console.log(bgcolor);
     console.log(revertbgcolor);
+    console.log(anderebgcolor);
     var a = Math.floor(Math.random() * 256);
     var b = Math.floor(Math.random() * 256);
     var c = Math.floor(Math.random() * 256);
@@ -23,7 +25,9 @@ function color_generator() {
     for (let i = 1; i < evenCircle.length; i+=2) {
         oddCircle[i].style.backgroundColor = reverotherbgcolor;
         evenCircle[i].style.backgroundColor = revertbgcolor;
+        
     }
+    document.body.style.backgroundColor = anderebgcolor;
     }
     document.addEventListener("scroll", () => {
     color_generator();

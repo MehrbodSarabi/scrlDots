@@ -1,6 +1,9 @@
 *{
     margin: 0;
 }
+body{
+    transition: 500ms;
+}
 .container{
     width: 100%;
     margin: auto;
