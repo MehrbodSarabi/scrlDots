@@ -14,7 +14,7 @@ body{
 .parent{
     display: flex;
     flex-wrap: wrap;
-    flex: 0 1 45%;
+    flex: 0 1 10%;
     border: none;
     /* background-color: red; */
     padding: 2.5%;
