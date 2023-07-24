@@ -20,12 +20,16 @@ function color_generator() {
     // document.body.style.backgroundCoslor = otherbgcolor;
     for (let i = 0; i < oddCircle.length; i+=2) {
         oddCircle[i].style.backgroundColor = bgcolor;
-        evenCircle[i].style.backgroundColor = otherbgcolor;
+        // evenCircle[i].style.backgroundColor = otherbgcolor;
+
+        oddCircle[i].style.backgroundColor = reverotherbgcolor;
+
     }
     for (let i = 1; i < evenCircle.length; i+=2) {
-        oddCircle[i].style.backgroundColor = reverotherbgcolor;
+        // oddCircle[i].style.backgroundColor = reverotherbgcolor;
         evenCircle[i].style.backgroundColor = revertbgcolor;
         
+        evenCircle[i].style.backgroundColor = otherbgcolor;
     }
     document.body.style.backgroundColor = anderebgcolor;
     }
