@@ -1,41 +1,88 @@
-const oddCircle = document.getElementsByClassName("oddCircle");
-const evenCircle = document.getElementsByClassName("evenCircle");
-function color_generator() {
-    var x = Math.floor(Math.random() * 256);
-    var y = Math.floor(Math.random() * 256);
-    var z = Math.floor(Math.random() * 256);
-    var bgcolor = "rgb("+x+","+y+","+z+")";
-    var revertbgcolor = "rgb("+z+","+y+","+x+")";
-    var anderebgcolor = "rgb("+y+","+y+","+y+")";
-    console.log(bgcolor);
-    console.log(revertbgcolor);
-    console.log(anderebgcolor);
-    var a = Math.floor(Math.random() * 256);
-    var b = Math.floor(Math.random() * 256);
-    var c = Math.floor(Math.random() * 256);
-    var otherbgcolor = "rgb("+a+","+b+","+c+")";
-    var reverotherbgcolor = "rgb("+c+","+b+","+a+")";
-    console.log(otherbgcolor);
-    console.log(reverotherbgcolor);
-    // document.body.style.backgroundCoslor = otherbgcolor;
-    for (let i = 0; i < oddCircle.length; i+=2) {
-        oddCircle[i].style.backgroundColor = bgcolor;
-        evenCircle[i].style.backgroundColor = otherbgcolor;
+window.addEventListener("DOMContentLoaded", () => {
 
-        // oddCircle[i].style.backgroundColor = reverotherbgcolor;
+    const oddCircle = document.getElementsByClassName("oddCircle");
+    const evenCircle = document.getElementsByClassName("evenCircle");
+        function color_generator() {
+        let x = Math.floor(Math.random() * 256);
+        let y = Math.floor(Math.random() * 256);
+        let z = Math.floor(Math.random() * 256);
+        let bgcolor = "rgb("+x+","+y+","+z+")";
+        let revertbgcolor = "rgb("+z+","+y+","+x+")";
+        let anderebgcolor = "rgb("+y+","+y+","+y+")"
+        let a = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        let c = Math.floor(Math.random() * 256);
+        let otherbgcolor = "rgb("+a+","+b+","+c+")";
+        let reverotherbgcolor = "rgb("+c+","+b+","+a+")";
+        // console.log(otherbgcolor);
+        // console.log(reverotherbgcolor);
 
-    }
-    for (let i = 1; i < evenCircle.length; i+=2) {
-        oddCircle[i].style.backgroundColor = reverotherbgcolor;
-        evenCircle[i].style.backgroundColor = revertbgcolor;
+        for (let i = 0; i < oddCircle.length; i+=2) {
+            oddCircle[i].style.backgroundColor = bgcolor;
+            evenCircle[i].style.backgroundColor = otherbgcolor;
+        }
+        for (let i = 1; i < evenCircle.length; i+=2) {
+            oddCircle[i].style.backgroundColor = reverotherbgcolor;
+            evenCircle[i].style.backgroundColor = revertbgcolor;
+        }
+        document.body.style.backgroundColor = anderebgcolor;
+        }
+        const container = document.querySelector(".container")
+        for(let i  =0 ; i<100; i++){
+            const parent = document.createElement("div")
+            parent.classList.add("parent")
+            const circle = document.createElement("div")
+            const className = i % 2== 0 ? "evenCircle" : "oddCircle"
+            circle.classList.add(className)
+            parent.appendChild(circle)
+            container.appendChild(parent)
+        }
+        document.addEventListener("scroll", () => {
+        color_generator();
+        });
         
-        // evenCircle[i].style.backgroundColor = otherbgcolor;
+        const oddCircleElement = document.querySelectorAll(".oddCircle")
+        console.log(oddCircleElement)
+        for(let i=0; i < oddCircleElement.length; i++){
+            const oddElement = oddCircleElement[i]
+            oddElement.addEventListener('mouseover', (e) => {
+                
+                e.currentTarget.classList.add("hidden")
+                // console.log(e.target)
+                // console.log(e.currentTarget)
+            })
+        }
+})
+
+// -------------------------------------------------------
+function sigma (x,y) {
+    for (let i = x + 1 ; i <= y ; i++) {
+        x +=  i;
     }
-function popDot() {
-    oddCircle.style
+    return x;
 }
-    document.body.style.backgroundColor = anderebgcolor;
+
+let start = 1
+let end = 7
+
+sigma (start, end)
+
+// console.log(start);
+    
+
+
+function addElem (a) {
+    let newArray = []
+    for(let i = 0; i< a.length; i++){
+        newArray.push(a[i])
     }
-    document.addEventListener("scroll", () => {
-    color_generator();
-    });
+    newArray.push(11)
+    return newArray
+}
+
+let myArray = [2,4,5]
+
+
+addElem(myArray)
+
+// console.log(myArray)
