@@ -42,15 +42,36 @@ window.addEventListener("DOMContentLoaded", () => {
         });
         
         const oddCircleElement = document.querySelectorAll(".oddCircle")
-        console.log(oddCircleElement)
+        const evenCircleElement = document.querySelectorAll(".evenCircle")
+        // console.log(oddCircleElement)
+        // console.log(evenCircleElement)
         for(let i=0; i < oddCircleElement.length; i++){
             const oddElement = oddCircleElement[i]
+            const evenElement = evenCircleElement[i]
             oddElement.addEventListener('mouseover', (e) => {
                 
                 e.currentTarget.classList.add("hidden")
                 // console.log(e.target)
                 // console.log(e.currentTarget)
             })
+            evenElement.addEventListener("click", (e) => {
+                e.currentTarget.classList.remove("resized")
+                e.currentTarget.classList.toggle("compressed")
+            })
+            oddElement.addEventListener("mouseout", (e) => {
+                e.currentTarget.classList.remove("hidden")
+                e.currentTarget.classList.add("compressed")
+            })
+            for (let i = 0; i < evenCircleElement.length; i+=2){
+                const evenFirstElement = evenCircleElement [i];
+                const oddFirstElement = oddCircleElement [i];
+                oddFirstElement.addEventListener('mouseout', (e) => {
+                    e.currentTarget.classList.add("halfCompressed")
+                })
+                evenFirstElement.addEventListener('mouseover', (e) => {
+                    e.currentTarget.classList.add("resized")
+                })
+            }
         }
 })
 

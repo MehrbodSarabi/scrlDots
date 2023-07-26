@@ -35,8 +35,21 @@ body{
     background-color: blue;
     border-radius: 50%;
     transition: background-color .5s;
+    /* transform: scale(.2,.2); */
 }
 
 .oddCircle.hidden{
     opacity: 0;
+}
+.evenCircle.compressed{
+    transform: scale(.5,.5);
+}
+.evenCircle.resized{
+    transform: scale(.2,1); 
+}
+.oddCircle.compressed{
+    transform: scale(.2,.2);
+}
+.oddCircle.halfCompressed{
+    transform: scale(.4,.4);
 }
