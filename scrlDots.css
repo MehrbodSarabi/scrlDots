@@ -26,7 +26,6 @@ body{
     background-color: red;
     border-radius: 50%;
     transition: background-color 500ms;
-    
 }
 .evenCircle{
     flex: 0 1 100%;
@@ -39,17 +38,27 @@ body{
 }
 
 .oddCircle.hidden{
+    transition: background-color 500ms;
+    transition: transform 5000ms;
     opacity: 0;
 }
 .evenCircle.compressed{
+    transition: background-color 500ms;
+    transition: transform 2000ms;
     transform: scale(.5,.5);
 }
 .evenCircle.resized{
-    transform: scale(.2,1); 
+    transition: background-color 500ms;
+    transition: transform 2000ms;
+    transform: scale(.2,1);
 }
 .oddCircle.compressed{
+    transition: background-color 500ms;
+    transition: transform 500ms;
     transform: scale(.2,.2);
 }
 .oddCircle.halfCompressed{
+    transition: background-color 500ms;
+    transition: transform 500ms;
     transform: scale(.4,.4);
 }
